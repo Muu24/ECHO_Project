@@ -54,7 +54,7 @@ data_2[,3][df[,3]>=40]<-1
 data_2[,4][df[,4]>=1.6]<-1
 data_2[,5][df[,5]>=2.0]<-1
 data_2[,6][df[,6]>=2.0]<-1
-data_2[,7][df[,7]>=1.6]<-1
+data_2[,7][df[,7]>=1.8]<-1
 ##
 C1<-data_2[,1]
 C2<-data_2[,2]
@@ -437,4 +437,106 @@ t_C2_C3_C4_EC3<-table(C2*C3*C4,EC3)
 confusionMatrix(t_C2_C3_C4_EC3)
 sscurves234_3<- evalmod(scores = C2*C3*C4, labels = EC3)
 autoplot(sscurves234_3)
+###C1_C2_C3_C4_EC123
+t_C1_C2_C3_C4_EC1<-table(C1*C2*C3*C4,EC1)
+confusionMatrix(t_C1_C2_C3_C4_EC1)
+sscurves1234_1<- evalmod(scores = C1*C2*C3*C4, labels = EC1)
+autoplot(sscurves1234_1)
+#
+t_C1_C2_C3_C4_EC2<-table(C1*C2*C3*C4,EC2)
+confusionMatrix(t_C1_C2_C3_C4_EC2)
+sscurves1234_2<- evalmod(scores = C1*C2*C3*C4, labels = EC2)
+autoplot(sscurves1234_2)
+#
+t_C1_C2_C3_C4_EC3<-table(C1*C2*C3*C4,EC3)
+confusionMatrix(t_C1_C2_C3_C4_EC3)
+sscurves1234_3<- evalmod(scores = C1*C2*C3*C4, labels = EC3)
+autoplot(sscurves1234_3)
+```
+
+```{r}
+##C1_EC1_EC2
+t_C1_EC1_EC2<-table(C1,EC1*EC2)
+confusionMatrix(t_C1_EC1_EC2)
+sscurves1_12<- evalmod(scores = C1, labels = EC1*EC2)
+autoplot(sscurves1_12)
+#
+t_C1_EC1_EC3<-table(C1,EC1*EC3)
+confusionMatrix(t_C1_EC1_EC3)
+sscurves1_13<- evalmod(scores = C1, labels = EC1*EC3)
+autoplot(sscurves1_13)
+#
+t_C1_EC2_EC3<-table(C1,EC2*EC3)
+confusionMatrix(t_C1_EC2_EC3)
+sscurves1_23<- evalmod(scores = C1, labels = EC2*EC3)
+autoplot(sscurves1_23)
+
+##C2_EC1_EC2
+t_C2_EC1_EC2<-table(C2,EC1*EC2)
+confusionMatrix(t_C2_EC1_EC2)
+sscurves2_12<- evalmod(scores = C2, labels = EC1*EC2)
+autoplot(sscurves2_12)
+#
+t_C2_EC1_EC3<-table(C2,EC1*EC3)
+confusionMatrix(t_C2_EC1_EC3)
+sscurves2_13<- evalmod(scores = C2, labels = EC1*EC3)
+autoplot(sscurves2_13)
+#
+t_C2_EC2_EC3<-table(C2,EC2*EC3)
+confusionMatrix(t_C2_EC2_EC3)
+sscurves2_23<- evalmod(scores = C2, labels = EC2*EC3)
+autoplot(sscurves2_23)
+
+##C3_EC1_EC2
+t_C3_EC1_EC2<-table(C3,EC1*EC2)
+confusionMatrix(t_C3_EC1_EC2)
+sscurves3_12<- evalmod(scores = C3, labels = EC1*EC2)
+autoplot(sscurves3_12)
+#
+t_C3_EC1_EC3<-table(C3,EC1*EC3)
+confusionMatrix(t_C3_EC1_EC3)
+sscurves3_13<- evalmod(scores = C3, labels = EC1*EC3)
+autoplot(sscurves3_13)
+#
+t_C3_EC2_EC3<-table(C3,EC2*EC3)
+confusionMatrix(t_C3_EC2_EC3)
+sscurves3_23<- evalmod(scores = C3, labels = EC2*EC3)
+autoplot(sscurves3_23)
+
+##C4_EC1_EC2
+t_C4_EC1_EC2<-table(C4,EC1*EC2)
+confusionMatrix(t_C4_EC1_EC2)
+sscurves4_12<- evalmod(scores = C4, labels = EC1*EC2)
+autoplot(sscurves4_12)
+#
+t_C4_EC1_EC3<-table(C4,EC1*EC3)
+confusionMatrix(t_C4_EC1_EC3)
+sscurves4_13<- evalmod(scores = C4, labels = EC1*EC3)
+autoplot(sscurves4_13)
+#
+t_C4_EC2_EC3<-table(C4,EC2*EC3)
+confusionMatrix(t_C4_EC2_EC3)
+sscurves4_23<- evalmod(scores = C4, labels = EC2*EC3)
+autoplot(sscurves4_23)
+
+##C1 with EC1_EC2_EC3
+t_C1_EC1_EC2_EC3<-table(C1,EC1*EC2*EC3)
+confusionMatrix(t_C1_EC1_EC2_EC3)
+sscurves1_123<-evalmod(scores = C1, labels = EC1*EC2*EC3)
+autoplot(sscurves1_123)
+#
+t_C2_EC1_EC2_EC3<-table(C2,EC1*EC2*EC3)
+confusionMatrix(t_C2_EC1_EC2_EC3)
+sscurves2_124<-evalmod(scores = C2, labels = EC1*EC2*EC3)
+autoplot(sscurves2_124)
+#
+t_C3_EC1_EC2_EC3<-table(C3,EC1*EC2*EC3)
+confusionMatrix(t_C3_EC1_EC2_EC3)
+sscurves3_123<-evalmod(scores = C3, labels = EC1*EC2*EC3)
+autoplot(sscurves3_123)
+#
+t_C4_EC1_EC2_EC3<-table(C4,EC1*EC2*EC3)
+confusionMatrix(t_C4_EC1_EC2_EC3)
+sscurves4_123<-evalmod(scores = C4, labels = EC1*EC2*EC3)
+autoplot(sscurves4_123)
 ```
